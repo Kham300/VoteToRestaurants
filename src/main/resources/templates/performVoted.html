@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>please vote</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="candidates" type="List<com.vote2go.votingsystem.entity.Candidate>"*/-->
+<div th:each="candidate : ${candidates}">
+
+    Click to vote for:
+
+
+    <!--/*@thymesVar id="id" type="java.lang.Long"*/-->
+    <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+    <a th:href="@{voteFor/(id=${candidate.id})}" th:text="${candidate.name}">vote</a>
+
+</div>
+</body>
+</html>
